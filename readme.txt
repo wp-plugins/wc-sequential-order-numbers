@@ -33,16 +33,6 @@ The plugin is fully compatible with the recent versions of Wordpress and Woocomm
 * Compatible with Wordpress versions 3.6.0 or later
 * Compatible with Woocommerce 2.2.x or later
 
-
-== Installation ==
-
-1. Upload the `wc-sequential-order-numbers` folder to the `/wp-content/plugins/` directory OR search for "Woocommerce Sequential Order Numbers Pro" from your Wordpress admin.
-2. Activate the plugin through the 'Plugins' menu in Wordpress.
-3. Update your Order Numbers under WooCommerce Settings > General and save.
-4. Sit back and watch the magic. 
-
-
-
 = Upcoming Features =
 
 In the upcoming version we will be adding a “performance mode” for shops with an extremely large number of orders.
@@ -53,6 +43,13 @@ In the upcoming version we will be adding a “performance mode” for shops wit
 All we want is some love. If you did not like this plugin or if it is buggy, please give us a shout and we will be happy to fix the issue add the feature. If you indeed liked it, please leave a 5/5 rating.  
 In case you feel compelled to rate this plugin less than 5 stars - please do mention the reason and we will add or change options and fix bugs. It's very unpleasant to see silent low rates. For more information and instructions on this plugin please visit www.dualcube.com.
 
+
+== Installation ==
+
+1. Upload the `wc-sequential-order-numbers` folder to the `/wp-content/plugins/` directory OR search for "Woocommerce Sequential Order Numbers Pro" from your Wordpress admin.
+2. Activate the plugin through the 'Plugins' menu in Wordpress.
+3. Update your Order Numbers under WooCommerce Settings > General and save.
+4. Sit back and watch the magic.
 
 
 == Screenshots ==
@@ -78,13 +75,3 @@ No,WooCommerce 2.3 or newer from the plugin settings, as WooCommerce core automa
 
 = 1.0.0 =
 * Initial release.
-
-
-
-
-
-
-
-
-
-
