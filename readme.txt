@@ -59,7 +59,6 @@ In case you feel compelled to rate this plugin less than 5 stars - please do men
 3. Sequentially incrementing order number with suffix and prefix in fronend page.
 
 
-
 == Frequently Asked Questions ==
 
 = What is skip free order? =
