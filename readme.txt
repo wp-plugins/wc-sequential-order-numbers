@@ -34,7 +34,7 @@ The plugin is fully compatible with the recent versions of Wordpress and Woocomm
 * Compatible with Woocommerce 2.2.x or later
 * Multilingual Support is included with the plugin and is fully compatible with WPML.
 
-> For more details [Click Here](http://plugins.dualcube.com/product/woocommerce-sequential-order-numbers-pro/)
+** For more details [Click Here](http://plugins.dualcube.com/product/woocommerce-sequential-order-numbers-pro/)**
 
 = Upcoming Features =
 
