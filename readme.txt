@@ -1,18 +1,17 @@
 === WC Sequential Order Numbers ===
 Contributors: Dualcube, putulsahoo
 Donate link: http://dualcube.com/
-Tags: woocommerce, order number, set_sequential_order_number, get_order_number, find_order_by_order_number, custom_shop_order,
-custom_search_fields, subscriptions_set_sequential_order_number, subscriptions_remove_renewal_order_meta, order_number_formatted, Ecommerce.
+Tags: woocommerce, order number, set_sequential_order_number, get_order_number, find_order_by_order_number, custom_shop_order, custom_search_fields, subscriptions_set_sequential_order_number, subscriptions_remove_renewal_order_meta, order_number_formatted, Ecommerce.
 Requires at least: 3.6.0
 Tested up to: 4.2.2
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-
 A new Wordpress Woocommerce plugin that helps you to have incrementing order numbers rather than random ones.
 
 == Description ==
+
 The plugin helps you to find highest order id if there is some existing orders and counts the order number sequentially after highest order id.
 The plugin helps you to count the order numbers sequentially from zero if there is no existing orders.
 
@@ -28,6 +27,7 @@ Orders with only free products can be excluded from the paid order sequence for 
 
 
 = Compatibility =
+
 The plugin is fully compatible with the recent versions of Wordpress and Woocommerce.
 
 * Compatible with Wordpress versions 3.6.0 or later
@@ -67,11 +67,16 @@ With this enabled, orders with only free products and no additional fees or cost
 = What is FREE IDENTIFIER? =
 This option is only available when the Skip Free Orders option is enabled. This allows you to set a prefix for the free orders numbering sequence so you can have for instance: FREE-1, FREE-2, FREE-3, etc.
 
-= Should i use Hash(#) for new version of woocommerce? =
+= Should I use Hash(#) for new version of woocommerce? =
 No,WooCommerce 2.3 or newer from the plugin settings, as WooCommerce core automatically displays a hash for all order numbers. 
 
 
 == Changelog ==
 
 = 1.0.0 =
-* Initial release.
+*   Initial release.
+
+== Upgrade Notice ==
+
+= 1.0.0 =
+*   Initial release
