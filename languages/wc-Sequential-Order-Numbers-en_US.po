@@ -1,137 +1,136 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Demo Plugin\n"
-"POT-Creation-Date: 2014-01-15 17:40+0530\n"
-"PO-Revision-Date: 2014-01-15 17:41+0530\n"
+"Project-Id-Version: WooCommerce Sequential Order Numbers Pro\n"
+"POT-Creation-Date: 2015-06-02 16:00+0530\n"
+"PO-Revision-Date: 2015-06-02 16:00+0530\n"
 "Last-Translator: Dualcube <admin@dualcube.com>\n"
 "Language-Team: Dualcube <admin@dualcube.com>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
-"X-Poedit-SearchPath-0: C:\\wamp\\www\\3dcart\\wp-content\\plugins"
-"\\dc_demo_plugin\n"
+"X-Poedit-SearchPath-0: /wc-sequential-order-numbers\n"
 
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/admin/class-dc-demo-plugin-settings-general.php:28
-msgid "Demo Default Settings"
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:61
+msgid "Order Number Start must be a number greater than or equal to 0."
 msgstr ""
 
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/admin/class-dc-demo-plugin-settings-general.php:30
-msgid "ID Number"
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:80
+#, php-format
+msgid ""
+"There is an existing order (%s) with a number greater than or equal to %s.  "
+"To set a new order number start please choose a higher number or permanently "
+"delete the relevant order(s)."
+msgstr ""
+
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:107
+msgid "Order Number Start must be a number greater than or equal to 0"
+msgstr ""
+
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:108
+msgid "There is an existing order"
+msgstr ""
+
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:135
+#, fuzzy
+msgid "Order Numbers"
 msgstr "Identification"
 
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/admin/class-dc-demo-plugin-settings-general.php:30
-msgid "Enter your ID Number here."
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:138
+msgid "Order Number Start"
 msgstr ""
 
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/admin/class-dc-demo-plugin-settings-general.php:30
-msgid "It will represent your identification."
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:139
+#, php-format
+msgid ""
+"The starting number for the incrementing portion of the order numbers, "
+"unless there is an existing order with a higher number.  Use leading zeroes "
+"to pad your order numbers to a desired minimum length.  Any newly placed "
+"orders will be numbered like: %s"
 msgstr ""
 
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/admin/class-dc-demo-plugin-settings-general.php:31
-msgid "About"
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:144
+#, php-format
+msgid "Sample order number: %s"
 msgstr ""
 
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/admin/class-dc-demo-plugin-settings-general.php:31
-msgid "About you"
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:148
+msgid "Hash Before Order number "
 msgstr ""
 
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/admin/class-dc-demo-plugin-settings-general.php:31
-msgid "It will represent your significant."
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:153
+msgid "Display a hash (#) before order numbers on frontend and admin."
 msgstr ""
 
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/admin/class-dc-demo-plugin-settings-general.php:32
-msgid "Enable"
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:157
+msgid "Order Number Prefix"
 msgstr ""
 
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/admin/class-dc-demo-plugin-settings-general.php:33
-msgid "Off Day"
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:158
+msgid ""
+"Set your custom order number prefix.  You may use {DD}, {MM}, {YYYY} for the "
+"current day, month and year respectively."
 msgstr ""
 
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/admin/class-dc-demo-plugin-settings-general.php:33
-msgid "Choose your preferred week offday."
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:166
+msgid "Order Number Suffix"
 msgstr ""
 
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/admin/class-dc-demo-plugin-settings-general.php:33
-msgid "By default Saterday will be offday."
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:167
+msgid ""
+"Set your custom order number suffix.  You may use {DD}, {MM}, {YYYY} for the "
+"current day, month and year respectively."
 msgstr ""
 
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/admin/class-dc-demo-plugin-settings-general.php:34
-msgid "Preference"
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:175
+msgid "Skip Free Orders"
 msgstr ""
 
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/admin/class-dc-demo-plugin-settings-general.php:34
-msgid "Choose your preferred occurence count."
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:176
+msgid "Skip order numbers for free orders"
 msgstr ""
 
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/admin/class-dc-demo-plugin-settings-general.php:35
-msgid "Logo"
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:177
+msgid ""
+"With this enabled an order number will not be assigned to an order "
+"consisting solely of free products."
 msgstr ""
 
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/admin/class-dc-demo-plugin-settings-general.php:35
-msgid "Your presentation."
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:186
+msgid "Free Order Identifer"
 msgstr ""
 
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/admin/class-dc-demo-plugin-settings-general.php:35
-msgid "Represent your graphical signature."
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:187
+#, php-format
+msgid "Example free order identifier: %s"
 msgstr ""
 
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/admin/class-dc-demo-plugin-settings-general.php:36
-msgid "Choose Color"
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:188
+msgid ""
+"The text to display in place of the order number for free orders.  This will "
+"be displayed anywhere an order number would otherwise be shown: to the "
+"customer, in emails, and in the admin."
 msgstr ""
 
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/admin/class-dc-demo-plugin-settings-general.php:36
-msgid "Choose your color here."
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:192
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:193
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:262
+#: /wc-sequential-order-numbers/classes/class-wc-Sequential-Order-Numbers-admin.php:363
+msgid "FREE-"
 msgstr ""
 
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/admin/class-dc-demo-plugin-settings-general.php:36
-msgid "This lets you choose your desired color."
+#: /wc-sequential-order-numbers/classes/class-wc-Sequential-Order-Numbers-admin.php:183
+#: /wc-sequential-order-numbers/classes/class-wc-Sequential-Order-Numbers-frontend.php:32
+msgid "Draft"
 msgstr ""
 
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/admin/class-dc-demo-plugin-settings-general.php:40
-msgid "Location"
-msgstr ""
-
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/admin/class-dc-demo-plugin-settings-general.php:41
-msgid "Role"
-msgstr ""
-
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/admin/class-dc-demo-plugin-settings-general.php:70
-msgid "Item ID should be an intiger."
-msgstr ""
-
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/admin/class-dc-demo-plugin-settings-general.php:91
-msgid "Please upload your unique logo."
-msgstr ""
-
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/admin/class-dc-demo-plugin-settings-general.php:113
-msgid "General settings updated"
-msgstr ""
-
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/admin/class-dc-demo-plugin-settings-general.php:126
-msgid "Enter your default settings below"
-msgstr ""
-
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/admin/class-dc-demo-plugin-settings-general.php:134
-msgid "Enter your custom settings below"
-msgstr ""
-
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/admin/class-dc-demo-plugin-settings.php:27
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/admin/class-dc-demo-plugin-settings.php:28
-msgid "DC Demo Settings"
-msgstr ""
-
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/admin/class-dc-demo-plugin-settings.php:41
-msgid "General"
-msgstr ""
-
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/classes/class-dc-demo-plugin-admin.php:29
-msgid "Powered by"
-msgstr ""
-
-#: C:\wamp\www\3dcart\wp-content\plugins\dc_demo_plugin/classes/class-dc-demo-plugin-admin.php:29
-msgid "Dualcube"
+#: /wc-sequential-order-numbers/includes/wc-Sequential-Order-Numbers-core-functions.php:8
+#, php-format
+msgid ""
+"%sSequential Order Numbers is inactive.%s The %sWooCommerce plugin%s must be "
+"active for the Sequential Order Numbers to work. Please %sinstall & activate "
+"WooCommerce%s"
 msgstr ""
