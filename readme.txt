@@ -61,17 +61,18 @@ In case you feel compelled to rate this plugin less than 5 stars - please do men
 
 
 == Frequently Asked Questions ==
-=What is skip free order?=
+
+= What is skip free order? =
 With this enabled, orders with only free products and no additional fees or costs will be excluded from the paid order sequence. Useful when required by certain accounting rules.
 
-=What is FREE IDENTIFIER?=
+= What is FREE IDENTIFIER? =
 This option is only available when the Skip Free Orders option is enabled. This allows you to set a prefix for the free orders numbering sequence so you can have for instance: FREE-1, FREE-2, FREE-3, etc.
 
-=Should i use Hash(#) for new version of woocommerce?=
+= Should i use Hash(#) for new version of woocommerce? =
 No,WooCommerce 2.3 or newer from the plugin settings, as WooCommerce core automatically displays a hash for all order numbers. 
 
 
-==Changelog==
+== Changelog ==
 
 = 1.0.0 =
 * Initial release.
