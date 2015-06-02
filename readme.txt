@@ -25,6 +25,7 @@ Order number length can be set, automatically adding as many zeroes to the begin
 
 Orders with only free products can be excluded from the paid order sequence for accounting purposes, and assigned their own custom prefix.
 
+**For more details [Click Here](http://plugins.dualcube.com/product/woocommerce-sequential-order-numbers-pro/)**
 
 = Compatibility =
 
@@ -34,7 +35,7 @@ The plugin is fully compatible with the recent versions of Wordpress and Woocomm
 * Compatible with Woocommerce 2.2.x or later
 * Multilingual Support is included with the plugin and is fully compatible with WPML.
 
-** For more details [Click Here](http://plugins.dualcube.com/product/woocommerce-sequential-order-numbers-pro/)**
+**For more details [Click Here](http://plugins.dualcube.com/product/woocommerce-sequential-order-numbers-pro/)**
 
 = Upcoming Features =
 
