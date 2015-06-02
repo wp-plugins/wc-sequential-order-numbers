@@ -1,14 +1,14 @@
-=== WC Sequential Order Numbers ===
-Contributors: Dualcube, putulsahoo
+=== WooCommerce Sequential Order Numbers Pro ===
+Contributors: Dualcube, putulsahoo, aveek
 Donate link: http://dualcube.com/
-Tags: woocommerce, order number, set_sequential_order_number, get_order_number, find_order_by_order_number, custom_shop_order, custom_search_fields, subscriptions_set_sequential_order_number, subscriptions_remove_renewal_order_meta, order_number_formatted, Ecommerce.
+Tags: woocommerce, order number, sequential order number, woocommerce sequential order number, wc sequential order number
 Requires at least: 3.6.0
 Tested up to: 4.2.2
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A new Wordpress Woocommerce plugin that helps you to have incrementing order numbers rather than random ones.
+A new Wordpress Woocommerce plugin that helps you to have sequential order numbers rather than random ones.
 
 == Description ==
 
@@ -32,6 +32,7 @@ The plugin is fully compatible with the recent versions of Wordpress and Woocomm
 
 * Compatible with Wordpress versions 3.6.0 or later
 * Compatible with Woocommerce 2.2.x or later
+* Multilingual Support is included with the plugin and is fully compatible with WPML.
 
 = Upcoming Features =
 
