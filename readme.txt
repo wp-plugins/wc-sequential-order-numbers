@@ -4,7 +4,7 @@ Donate link: http://dualcube.com/
 Tags: woocommerce, order number, sequential order number, woocommerce sequential order number, wc sequential order number
 Requires at least: 3.6.0
 Tested up to: 4.2.2
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,9 +65,15 @@ No, WooCommerce 2.3 or newer from the plugin settings, as WooCommerce core autom
 
 
 == Changelog ==
+= 1.0.1 =
+*   Minor bug fixed and compatible with latest WooCommerce
+
 = 1.0.0 =
 *   Initial release.
 
 == Upgrade Notice ==
+= 1.0.1 =
+*   Minor bug fixed and compatible with latest WooCommerce
+
 = 1.0.0 =
 *   Initial release

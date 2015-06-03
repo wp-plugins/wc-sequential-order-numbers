@@ -3,9 +3,8 @@
 Plugin Name: WooCommerce Sequential Order Numbers Pro
 Plugin URI: http://dualcube.com
 Description: Helps to have incrementing order numbers rather than random ones and find highest order id if there is some existing orders and counts the order number sequentially after highest order id.
-
-Author: Dualcube
-Version: 1.0.0
+Author: Dualcube, Putul Sahoo, Aveek Kr. Saha
+Version: 1.0.1
 Author URI: http://dualcube.com
 */
 
