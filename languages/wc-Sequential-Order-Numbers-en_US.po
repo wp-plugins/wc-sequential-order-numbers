@@ -1,0 +1,136 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce Sequential Order Numbers Pro\n"
+"POT-Creation-Date: 2015-06-02 16:00+0530\n"
+"PO-Revision-Date: 2015-06-02 16:00+0530\n"
+"Last-Translator: Dualcube <admin@dualcube.com>\n"
+"Language-Team: Dualcube <admin@dualcube.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: /wc-sequential-order-numbers\n"
+
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:61
+msgid "Order Number Start must be a number greater than or equal to 0."
+msgstr ""
+
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:80
+#, php-format
+msgid ""
+"There is an existing order (%s) with a number greater than or equal to %s.  "
+"To set a new order number start please choose a higher number or permanently "
+"delete the relevant order(s)."
+msgstr ""
+
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:107
+msgid "Order Number Start must be a number greater than or equal to 0"
+msgstr ""
+
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:108
+msgid "There is an existing order"
+msgstr ""
+
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:135
+#, fuzzy
+msgid "Order Numbers"
+msgstr "Identification"
+
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:138
+msgid "Order Number Start"
+msgstr ""
+
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:139
+#, php-format
+msgid ""
+"The starting number for the incrementing portion of the order numbers, "
+"unless there is an existing order with a higher number.  Use leading zeroes "
+"to pad your order numbers to a desired minimum length.  Any newly placed "
+"orders will be numbered like: %s"
+msgstr ""
+
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:144
+#, php-format
+msgid "Sample order number: %s"
+msgstr ""
+
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:148
+msgid "Hash Before Order number "
+msgstr ""
+
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:153
+msgid "Display a hash (#) before order numbers on frontend and admin."
+msgstr ""
+
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:157
+msgid "Order Number Prefix"
+msgstr ""
+
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:158
+msgid ""
+"Set your custom order number prefix.  You may use {DD}, {MM}, {YYYY} for the "
+"current day, month and year respectively."
+msgstr ""
+
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:166
+msgid "Order Number Suffix"
+msgstr ""
+
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:167
+msgid ""
+"Set your custom order number suffix.  You may use {DD}, {MM}, {YYYY} for the "
+"current day, month and year respectively."
+msgstr ""
+
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:175
+msgid "Skip Free Orders"
+msgstr ""
+
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:176
+msgid "Skip order numbers for free orders"
+msgstr ""
+
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:177
+msgid ""
+"With this enabled an order number will not be assigned to an order "
+"consisting solely of free products."
+msgstr ""
+
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:186
+msgid "Free Order Identifer"
+msgstr ""
+
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:187
+#, php-format
+msgid "Example free order identifier: %s"
+msgstr ""
+
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:188
+msgid ""
+"The text to display in place of the order number for free orders.  This will "
+"be displayed anywhere an order number would otherwise be shown: to the "
+"customer, in emails, and in the admin."
+msgstr ""
+
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:192
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:193
+#: /wc-sequential-order-numbers/admin/class-wc-Sequential-Order-Numbers-settings.php:262
+#: /wc-sequential-order-numbers/classes/class-wc-Sequential-Order-Numbers-admin.php:363
+msgid "FREE-"
+msgstr ""
+
+#: /wc-sequential-order-numbers/classes/class-wc-Sequential-Order-Numbers-admin.php:183
+#: /wc-sequential-order-numbers/classes/class-wc-Sequential-Order-Numbers-frontend.php:32
+msgid "Draft"
+msgstr ""
+
+#: /wc-sequential-order-numbers/includes/wc-Sequential-Order-Numbers-core-functions.php:8
+#, php-format
+msgid ""
+"%sSequential Order Numbers is inactive.%s The %sWooCommerce plugin%s must be "
+"active for the Sequential Order Numbers to work. Please %sinstall & activate "
+"WooCommerce%s"
+msgstr ""
