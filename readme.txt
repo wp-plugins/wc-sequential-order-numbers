@@ -1,4 +1,4 @@
-=== WooCommerce Sequential Order Numbers Pro ===
+=== WC Sequential Order Numbers ===
 Contributors: Dualcube, putulsahoo, aveek
 Donate link: http://dualcube.com/
 Tags: woocommerce, order number, sequential order number, woocommerce sequential order number, wc sequential order number
