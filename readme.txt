@@ -23,7 +23,7 @@ You may include the current day, month, or year in your custom order number pref
 Order number length can be set, automatically adding as many zeroes to the beginning of the order number as needed.
 Orders with only free products can be excluded from the paid order sequence for accounting purposes, and assigned their own custom prefix.
 
-**For more details [Click Here](http://plugins.dualcube.com/product/woocommerce-sequential-order-numbers-pro/)**
+**For more details [Click Here](http://plugins.dualcube.com/product/wc-sequential-order-numbers/)**
 
 = Compatibility =
 The plugin is fully compatible with the recent versions of WordPress and WooCommerce.
