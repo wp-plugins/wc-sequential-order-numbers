@@ -4,7 +4,7 @@ Plugin Name: WC Sequential Order Numbers
 Plugin URI: http://dualcube.com
 Description: Helps to have incrementing order numbers rather than random ones and find highest order id if there is some existing orders and counts the order number sequentially after highest order id.
 Author: Dualcube, Putul Sahoo, Aveek Kr. Saha
-Version: 1.0.1
+Version: 1.0.2
 Author URI: http://dualcube.com
 */
 
