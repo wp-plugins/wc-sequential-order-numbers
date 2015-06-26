@@ -52,7 +52,7 @@ In case you feel compelled to rate this plugin less than 5 stars - please do men
 1. WC Sequential Order Numbers setting panel.
 2. An order number when prefix->DC and suffix->ES and start from 103.
 3. Some orders with sequencial order number.
-4. Admin can search with sequencial order number.
+4. Admin can search order using sequencial order number.
 5. Buyer can track his order status using sequencial order id.
 6. Sample order number when size is 8 including prefix.
 7. Sample order number when size is 8 including prefix and suffix.
