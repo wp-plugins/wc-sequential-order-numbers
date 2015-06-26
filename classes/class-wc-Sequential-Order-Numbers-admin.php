@@ -9,7 +9,7 @@ class WC_Sequential_Order_Numbers_Admin {
 	
 	private $order_number_suffix;
 	
-	private $order_number_length;
+	private $order_number_size;
 	
 
 	public function __construct() {
@@ -78,7 +78,7 @@ class WC_Sequential_Order_Numbers_Admin {
 	
 
 	public function sequential_order_number( $post_id, $post = array() ) {
-
+		
 		if ( is_array( $post ) || ( 'shop_order' == $post->post_type && 'auto-draft' != $post->post_status ) ) {
 
 			$post_id = is_a( $post_id, 'WC_Order' ) ? $post_id->id : $post_id;
@@ -94,13 +94,14 @@ class WC_Sequential_Order_Numbers_Admin {
 					}
 				} else {
 					
-					$this->generate_sequential_order_number( $post_id, '_order_number', get_option( 'woocommerce_order_number_start' ), $this->order_number_prefix(), $this->order_number_suffix(), $this->order_number_length() );
+					$this->generate_sequential_order_number( $post_id, '_order_number', get_option( 'woocommerce_order_number_start' ), $this->order_number_prefix(), $this->order_number_suffix(), $this->order_number_size() );
 				}
 			}
 		}
-	}
+		
+    }
 
-	private function generate_sequential_order_number( $post_id, $order_number_meta_name, $order_number_start, $order_number_prefix = '', $order_number_suffix = '', $order_number_length = 1 ) {
+	private function generate_sequential_order_number( $post_id, $order_number_meta_name, $order_number_start, $order_number_prefix = '', $order_number_suffix = '', $order_number_size = 1 ) {
 		global $wpdb;
 
 		$success = false;
@@ -125,13 +126,13 @@ class WC_Sequential_Order_Numbers_Admin {
                 
                 print_r($order_number_start);
                     
-				update_post_meta( $post_id, '_order_number_formatted', $this->format_order_number( $order_number, $order_number_prefix, $order_number_suffix, $order_number_length ) );
+				update_post_meta( $post_id, '_order_number_formatted', $this->format_order_number( $order_number, $order_number_prefix, $order_number_suffix, $order_number_size ) );
 
 				
 				$order_number_meta = array(
 					'prefix' => $order_number_prefix,
 					'suffix' => $order_number_suffix,
-					'length' => $order_number_length
+					'size' => $order_number_size
 				);
 				update_post_meta( $post_id, '_order_number_meta', $order_number_meta );
 			}
@@ -162,10 +163,11 @@ class WC_Sequential_Order_Numbers_Admin {
 				FROM {$wpdb->postmeta}
 				WHERE meta_key='_order_number'",
 				$order_number_start, $order_number_start ) );
-			return $maybe_hash . $this->format_order_number( $order_number, $this->order_number_prefix(), $this->order_number_suffix(), $this->order_number_length() ) . ' (' . __( 'Draft', self::TEXT_DOMAIN ) . ')';
+			return $maybe_hash . $this->format_order_number( $order_number, $this->order_number_prefix(), $this->order_number_suffix(), $this->order_number_size() ) . ' (' . __( 'Draft', self::TEXT_DOMAIN ) . ')';
 		}
-		return $order_number;
-	}
+		
+	    return $order_number;
+ }
 
 	public function custom_shop_order( $vars ) {
 		global $typenow, $wp_query;
@@ -205,13 +207,13 @@ class WC_Sequential_Order_Numbers_Admin {
 		return $order_meta_query;
 	}
 	
-	private function format_order_number( $order_number, $order_number_prefix = '', $order_number_suffix = '', $order_number_length = 1 ) {
+	private function format_order_number( $order_number, $order_number_prefix = '', $order_number_suffix = '', $order_number_size = 1 ) {
 
 		$order_number = (int) $order_number;
 
 		
-		if ( $order_number_length && ctype_digit( $order_number_length ) ) {
-			$order_number = sprintf( "%0{$order_number_length}d", $order_number );
+		if ( $order_number_size && ctype_digit( $order_number_size ) ) {
+			$order_number = sprintf( "%0{$order_number_size}d", $order_number );
 		}
 
 		$formatted = $order_number_prefix . $order_number . $order_number_suffix;
@@ -237,6 +239,16 @@ class WC_Sequential_Order_Numbers_Admin {
 		return 'yes' == get_option( 'woocommerce_hash_before_order_number', 'no' );
 	}
 
+	private function order_number_size_including_prefix() {
+
+		return 'yes' == get_option( 'woocommerce_order_number_size_including_prefix', 'no' );
+		
+	}
+
+	private function order_number_size_including_suffix() {
+		return 'yes' == get_option( 'woocommerce_order_number_size_including_suffix', 'no' );
+	}
+
 	private function order_number_prefix() {
 
 		if ( ! isset( $this->order_number_prefix ) )
@@ -253,12 +265,45 @@ class WC_Sequential_Order_Numbers_Admin {
 		return $this->order_number_suffix;
 	}
 
-	private function order_number_length() {
+	private function order_number_size() {
+        
+        if ( ! isset( $this->order_number_size )  )
 
-		if ( ! isset( $this->order_number_length ) )
-			$this->order_number_length = get_option( 'woocommerce_order_number_length', 1 );
+        	$order_number_size_including_prefix_enable = get_option( 'woocommerce_order_number_size_including_prefix', 'no' );
 
-		return $this->order_number_length;
+            $order_number_size_including_suffix_enable = get_option( 'woocommerce_order_number_size_including_suffix', 'no' );
+            
+
+        if ( $order_number_size_including_prefix_enable =="yes" ){
+
+        	$prefix_length = strlen(get_option( 'woocommerce_order_number_prefix', "" ));
+        
+        }
+
+        else {
+
+        	 $prefix_length = 0;
+        }
+
+
+        if ( $order_number_size_including_suffix_enable =="yes" ){   
+
+        	$suffix_length = strlen(get_option( 'woocommerce_order_number_suffix', "" ));
+        
+        }
+
+        else {
+
+            $suffix_length = 0;
+        }
+
+
+            $this->order_number_size = (string)(get_option( 'woocommerce_order_number_size', 1 )-$prefix_length-$suffix_length);
+
+            $order_number_length = strlen(get_option('woocommerce_order_number_size', 1));
+
+        	 return $this->order_number_size;
+       
 	}
 
 	private function skip_free_orders() {
@@ -273,7 +318,7 @@ class WC_Sequential_Order_Numbers_Admin {
 		return get_option( 'woocommerce_free_order_number_start' );
 	}
 
-	private function free_order( $order_id ) {
+	private function is_free_order( $order_id ) {
 
 		$is_free = true;
 		$order = new WC_Order( $order_id );

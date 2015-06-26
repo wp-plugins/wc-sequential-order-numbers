@@ -7,9 +7,13 @@ private $options;
   
   private $order_number_prefix;
   
+  private $order_number_size_including_prefix;
+  
   private $order_number_suffix;
   
-  private $order_number_length;
+  private $order_number_size_including_suffix;
+  
+  private $order_number_size;
 
   private $order_number_start;
 
@@ -19,10 +23,11 @@ private $options;
 
     
     add_filter( 'pre_update_option_woocommerce_order_number_start', array(&$this, 'order_number_start_setting' ), 10, 2 );
+    
     add_filter( 'wp_redirect', array(&$this, 'error_msg' ), 10, 2 );
 
   }
-
+  
   public function order_number_start_setting( $newvalue, $oldvalue ) {
 
     global $wpdb;
@@ -31,7 +36,7 @@ private $options;
     if ( (int) $newvalue === (int) $oldvalue ) {
 
      
-      update_option( 'woocommerce_order_number_length', strlen( $newvalue ) );
+      update_option( 'woocommerce_order_number_size', strlen( $newvalue ) );
 
       return $newvalue;
     }
@@ -64,7 +69,7 @@ private $options;
     }
 
    
-    update_option( 'woocommerce_order_number_length', strlen( $newvalue ) );
+    update_option( 'woocommerce_order_number_size', strlen( $newvalue ) );
 
     
     return $newvalue;
@@ -80,7 +85,7 @@ private $options;
       
       $location = remove_query_arg( 'wc_error', $location );
     }
-
+    
     return $location;
   }
 
@@ -100,12 +105,12 @@ private $options;
 
         $updated_settings[] = array(
           'name'     => __( 'Order Number Start' ),
-          'desc_tip' => sprintf( __( 'The starting number for the incrementing portion of the order numbers, unless there is an existing order with a higher number.  Use leading zeroes to pad your order numbers to a desired minimum length.  Any newly placed orders will be numbered like: %s' ), $this->format_order_number( get_option( 'woocommerce_order_number_start' ), $this->order_number_prefix(), $this->order_number_suffix(), $this->order_number_length() ) ),
+          'desc_tip' => sprintf( __( 'The starting number for the incrementing portion of the order numbers, unless there is an existing order with a higher number.  Use leading zeroes to pad your order numbers to a desired minimum length.  Any newly placed orders will be numbered like: %s' ), $this->format_order_number( get_option( 'woocommerce_order_number_start' ), $this->order_number_prefix(), $this->order_number_suffix(), $this->woocommerce_order_number_size() ) ),
           'id'       => 'woocommerce_order_number_start',
           'type'     => 'text',
           'css'      => 'min-width:300px;',
           'default'  => '',
-          'desc'     => sprintf( __( 'Sample order number: %s' ), '<span id="sample_order_number">' . $this->format_order_number( get_option( 'woocommerce_order_number_start' ), $this->order_number_prefix(), $this->order_number_suffix(), $this->order_number_length() ) . '</span>' )
+          'desc'     => sprintf( __( 'Sample order number: %s' ), '<span id="sample_order_number">' . $this->format_order_number( get_option( 'woocommerce_order_number_start' ), $this->order_number_prefix(), $this->order_number_suffix(), $this->order_number_size() ) . '</span>' )
         );
 
         $updated_settings[] = array(
@@ -113,7 +118,7 @@ private $options;
           'id'       => 'woocommerce_hash_before_order_number',
           'type'     => 'checkbox',
           'css'      => 'min-width:300px;',
-          'default'  => 'no', // WC >= 2.0
+          'default'  => 'no', 
           'desc'     => __( 'Display a hash (#) before order numbers on frontend and admin.' )
         );
 
@@ -126,6 +131,7 @@ private $options;
           'default'  => ''
         );
 
+        
         $updated_settings[] = array(
           'name'     => __( 'Order Number Suffix' ),
           'desc_tip' => __( 'Set your custom order number suffix.  You may use {DD}, {MM}, {YYYY} for the current day, month and year respectively.' ),
@@ -135,6 +141,32 @@ private $options;
           'default'  => ''
         );
 
+        $updated_settings[] = array(
+          'name'     => __( 'Order Number Size' ),
+          'id'       => 'woocommerce_order_number_size',
+          'type'     => 'number',
+          'css'      => 'min-width:50px;',
+          'default'  => '',
+          'desc'     => __( 'Set a custom order number size.' )
+        );
+
+        $updated_settings[] = array(
+          'name'     => __( 'Order Number Size Including Prefix' ),
+          'id'       => 'woocommerce_order_number_size_including_prefix',
+          'type'     => 'checkbox',
+          'css'      => 'min-width:300px;',
+          'default'  => 'no'
+        );
+
+        $updated_settings[] = array(
+          'name'     => __( 'Order Number Size Including Suffix' ),
+          'id'       => 'woocommerce_order_number_size_including_suffix',
+          'type'     => 'checkbox',
+          'css'      => 'min-width:300px;',
+          'default'  => 'no'
+        );
+
+        
         $updated_settings[] = array(
           'name'     => __( 'Skip Free Orders' ),
           'desc'     => __( 'Skip order numbers for free orders' ),
@@ -167,13 +199,14 @@ private $options;
   private function free_order_number_start() {
     return get_option( 'woocommerce_free_order_number_start' );
   }
-  private function format_order_number( $order_number, $order_number_prefix = '', $order_number_suffix = '', $order_number_length = 1 ) {
+
+  private function format_order_number( $order_number, $order_number_prefix = '', $order_number_suffix = '', $order_number_size = 1 ) {
 
     $order_number = (int) $order_number;
 
     
-    if ( $order_number_length && ctype_digit( $order_number_length ) ) {
-      $order_number = sprintf( "%0{$order_number_length}d", $order_number );
+    if ( $order_number_size && ctype_digit( $order_number_size ) ) {
+      $order_number = sprintf( "%0{$order_number_size}d", $order_number );
     }
 
     $formatted = $order_number_prefix . $order_number . $order_number_suffix;
@@ -194,6 +227,7 @@ private $options;
 
     return str_replace( array_keys( $replacements ), $replacements, $formatted );
   }
+
   private function order_number_prefix() {
 
     if ( ! isset( $this->order_number_prefix ) )
@@ -201,6 +235,7 @@ private $options;
 
     return $this->order_number_prefix;
   }
+
   private function order_number_suffix() {
 
     if ( ! isset( $this->order_number_suffix ) )
@@ -208,15 +243,37 @@ private $options;
 
     return $this->order_number_suffix;
   }
-  private function order_number_length() {
+  
+  private function order_number_size() {
 
-    if ( ! isset( $this->order_number_length ) )
-      $this->order_number_length = get_option( 'woocommerce_order_number_length', 1 );
+    if ( ! isset( $this->order_number_size ) )
+      $this->order_number_size = get_option( 'woocommerce_order_number_size', 1 );
 
-    return $this->order_number_length;
+    return $this->order_number_size;
   }
+
+  private function order_number_size_including_prefix() {
+
+    if ( ! isset( $this->order_number_size_including_prefix ) )
+      $this->order_number_size_including_prefix = get_option( 'woocommerce_order_number_size_including_prefix', "" );
+
+    return $this->order_number_size_including_prefix;
+  }
+
+  private function order_number_size_including_suffix() {
+
+    if ( ! isset( $this->order_number_size_including_suffix ) )
+      $this->order_number_size_including_suffix = get_option( 'woocommerce_order_number_size_including_suffix', "" );
+
+    return $this->order_number_size_including_suffix;
+  }
+
   private function free_order_number_prefix() {
     return get_option( 'woocommerce_free_order_number_prefix', __( 'FREE-' ) );
+  }
+
+  private function woocommerce_order_number_size() {
+    
   }
 
 }

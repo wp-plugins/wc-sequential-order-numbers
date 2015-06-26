@@ -24,6 +24,10 @@ class WC_Sequential_Order_Numbers_Install {
 			
 			update_option( 'woocommerce_order_number_start', $max_order_id+1 );
 		}
+
+		else
+
+		    update_option( 'woocommerce_order_number_start', 1 );	
 	}
 
 } 

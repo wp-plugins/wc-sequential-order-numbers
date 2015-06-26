@@ -4,7 +4,7 @@ Donate link: http://dualcube.com/
 Tags: woocommerce, order number, sequential order number, woocommerce sequential order number, wc sequential order number
 Requires at least: 3.6.0
 Tested up to: 4.2.2
-Stable tag: 1.0.2
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ A new WordPress WooCommerce plugin that helps you to have sequential order numbe
 
 == Description ==
 The plugin helps you to find highest order id if there is some existing orders and counts the order number sequentially after highest order id.
-The plugin helps you to count the order numbers sequentially from zero if there is no existing orders.
+The plugin helps you to count the order numbers sequentially from One(1) if there is no existing orders.
 
 The plugin helps you to set order number manually what you desire.
 
@@ -20,7 +20,8 @@ The plugin helps you to add suffix, prefix, hash(#) with the order number. For W
 
 You may include the current day, month, or year in your custom order number prefix or suffix and may include the current time: hour, minute, second in your custom order number prefix or suffix.
 
-Order number length can be set, automatically adding as many zeroes to the beginning of the order number as needed.
+You can set a custom order number size and enable order number size including prefix and suffix. If you enable order number size including prefix and suffix the order number size will be calculated including prefix length and suffix length.
+
 Orders with only free products can be excluded from the paid order sequence for accounting purposes, and assigned their own custom prefix.
 
 **For more details [Click Here](http://plugins.dualcube.com/product/wc-sequential-order-numbers/)**
@@ -48,9 +49,15 @@ In case you feel compelled to rate this plugin less than 5 stars - please do men
 
 
 == Screenshots ==
-1. WooCommerce setting panel.
-2. Sequential order number with suffix and prefix in WooCommerce order panel.
-3. Sequential order number with suffix and prefix in fronend page.
+1. WC Sequential Order Numbers setting panel.
+2. An order number when prefix->DC and suffix->ES and start from 103.
+3. Some orders with sequencial order number.
+4. Admin can search with sequencial order number.
+5. Buyer can track his order status using sequencial order id.
+6. Sample order number when size is 8 including prefix.
+7. Sample order number when size is 8 including prefix and suffix.
+8. Woocommerce my account page.
+9. A sample order from front-end.
 
 
 == Frequently Asked Questions ==
@@ -65,6 +72,9 @@ No, WooCommerce 2.3 or newer from the plugin settings, as WooCommerce core autom
 
 
 == Changelog ==
+= 1.1.0 =
+*   Admin can set custom order number size with prefix and suffix
+*   Customer can track their order by order number
 
 = 1.0.2 =
 *   Minor bug fix
@@ -76,6 +86,9 @@ No, WooCommerce 2.3 or newer from the plugin settings, as WooCommerce core autom
 *   Initial release.
 
 == Upgrade Notice ==
+= 1.1.0 =
+*   Admin can set custom order number size with prefix and suffix
+*   Customer can track their order by order number
 
 = 1.0.2 =
 *   Minor bug fix

@@ -3,6 +3,8 @@ class WC_Sequential_Order_Numbers_Frontend {
 
 	public function __construct() {
 		add_filter( 'woocommerce_order_number', array(&$this, 'order_number' ), 10, 2);
+		
+		add_filter( 'woocommerce_shortcode_order_tracking_order_id', array(&$this, 'find_order_number' ) );
 	}
 
 	public function order_number( $order_number, $order ) {
@@ -25,8 +27,9 @@ class WC_Sequential_Order_Numbers_Frontend {
 				$order_number_start, $order_number_start ) );
 			return $maybe_hash . $this->format_order_number( $order_number, $this->order_number_prefix(), $this->order_number_suffix(), $this->order_number_length() ) . ' (' . __( 'Draft', self::TEXT_DOMAIN ) . ')';
 		}
-		return $order_number;
-	}
+		
+	    return $order_number;
+}
 
 	private function skip_free_orders() {
 		return 'yes' == get_option( 'woocommerce_order_number_skip_free_orders', 'no' );
@@ -34,6 +37,13 @@ class WC_Sequential_Order_Numbers_Frontend {
 	
 	private function hash_before_order_number() {
 		return 'yes' == get_option( 'woocommerce_hash_before_order_number', 'no' );
+	}
+	
+	public function find_order_number( $order_id ) {
+		global $wpdb;
+		$tablename = $wpdb->prefix.'postmeta';
+		$row = $wpdb->get_row("SELECT * FROM $tablename WHERE meta_key = '_order_number_formatted' and meta_value = '$order_id'", ARRAY_A);
+		return $row['post_id'];	
 	}
 
 }
