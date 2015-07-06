@@ -18,14 +18,13 @@ class WC_Sequential_Order_Numbers_Install {
 		if( !empty($all_order) && isset($all_order) ) {
 			foreach( $all_order as $each_order ) {
 				$order_id[] = $each_order->ID;
+				update_option( 'ggggg', $each_order );
 			}
 			
 			$max_order_id = max($order_id);
 			
 			update_option( 'woocommerce_order_number_start', $max_order_id+1 );
-		}
-
-		else
+		} else
 
 		    update_option( 'woocommerce_order_number_start', 1 );	
 	}
