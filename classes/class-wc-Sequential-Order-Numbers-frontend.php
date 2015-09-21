@@ -42,7 +42,6 @@ class WC_Sequential_Order_Numbers_Frontend {
 	
 	private function generate_sequential_order_number( $post_id, $order_number_meta_name, $order_number_start, $order_number_prefix = '', $order_number_suffix = '', $order_number_size = 1 ) {
 		global $wpdb;
-
 		$success = false;
 		if (!isset($order_number_start)) {
 			$order_number_start  = get_post_meta( $post_id, '_order_number_meta' );
@@ -55,6 +54,7 @@ class WC_Sequential_Order_Numbers_Frontend {
 					WHERE meta_key='{$order_number_meta_name}'",
 				$post_id, $order_number_start, $order_number_start );
 			$success = $wpdb->query( $query );
+			
 
 			if ( $success ) {
 				$order_number = $wpdb->get_var( $wpdb->prepare( "SELECT meta_value FROM {$wpdb->postmeta} WHERE meta_id = %d", $wpdb->insert_id ) );
@@ -69,6 +69,29 @@ class WC_Sequential_Order_Numbers_Frontend {
 		}
 		return $success;
 	}
+	
+	private function format_order_number( $order_number, $order_number_prefix = '', $order_number_suffix = '', $order_number_size = 1 ) {
+		$order_number = (int) $order_number;
+		if ( $order_number_size && ctype_digit( $order_number_size ) ) {
+			$order_number = sprintf( "%0{$order_number_size}d", $order_number );
+		}
+		$formatted = $order_number_prefix . $order_number . $order_number_suffix;
+		$replacements = array(
+			'{D}'    => date_i18n( 'j' ),
+			'{DD}'   => date_i18n( 'd' ),
+			'{M}'    => date_i18n( 'n' ),
+			'{MM}'   => date_i18n( 'm' ),
+			'{YY}'   => date_i18n( 'y' ),
+			'{YYYY}' => date_i18n( 'Y' ),
+			'{H}'    => date_i18n( 'G' ),
+			'{HH}'   => date_i18n( 'H' ),
+			'{N}'    => date_i18n( 'i' ),
+			'{S}'    => date_i18n( 's' )
+		);
+		return str_replace( array_keys( $replacements ), $replacements, $formatted );
+	}
+	
+	
 	
 	private function free_order_number_start() {
 		return get_option( 'woocommerce_free_order_number_start' );
@@ -160,3 +183,4 @@ class WC_Sequential_Order_Numbers_Frontend {
 		$this->create_sequential_order_number( $order_post->ID, $order_post );
 	}
 }
+?>

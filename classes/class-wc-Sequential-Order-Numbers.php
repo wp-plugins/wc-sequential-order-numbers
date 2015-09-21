@@ -94,3 +94,4 @@ class WC_Sequential_Order_Numbers {
 	}
 
 }
+?>

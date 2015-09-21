@@ -3,8 +3,8 @@ Contributors: Dualcube, putulsahoo, aveek
 Donate link: http://dualcube.com/
 Tags: woocommerce, order number, sequential order number, woocommerce sequential order number, wc sequential order number
 Requires at least: 3.6.0
-Tested up to: 4.2.2
-Stable tag: 1.1.1
+Tested up to: 4.3
+Stable tag: 1.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -72,6 +72,12 @@ No, WooCommerce 2.3 or newer from the plugin settings, as WooCommerce core autom
 
 
 == Changelog ==
+= 1.1.3 =
+*   Fix - Minor bug fixed, now admin can make an order status "Complete" from dashboard.
+
+= 1.1.2 =
+*   Fix - Minor bug fixed to make it compatible with WooCommerce version 2.4+
+
 = 1.1.1 =
 *   Minor bug fixed with "WooCommerce Free Order"
 *   Now admin can create order from backend with "Sequencial Number"
@@ -90,6 +96,12 @@ No, WooCommerce 2.3 or newer from the plugin settings, as WooCommerce core autom
 *   Initial release.
 
 == Upgrade Notice ==
+= 1.1.3 =
+*   Fix - Minor bug fixed, now admin can make an order status "Complete" from dashboard.
+
+= 1.1.2 =
+*   Fix - Minor bug fixed to make it compatible with WooCommerce version 2.4+
+
 = 1.1.1 =
 *   Minor bug fixed with "WooCommerce Free Order"
 *   Now admin can create order from backend with "Sequencial Number"

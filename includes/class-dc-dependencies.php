@@ -24,4 +24,4 @@ class WC_Dependencies_Sequential_Order_No {
 	}
 
 }
-
+?>

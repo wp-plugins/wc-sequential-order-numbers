@@ -11,3 +11,4 @@ if( !function_exists( 'woocommerce_inactive_notice' ) ) {
    <?php
   }
 }
+?>

@@ -42,11 +42,17 @@ class WC_Sequential_Order_Numbers_Admin {
 			$order_number = get_post_meta( $post_id, '_order_number' );
 			if ( empty( $order_number ) ) {
 				if ( $this->skip_free_orders() && $this->is_free_order( $post_id ) ) {
-					if ( $this->generate_sequential_order_number( $post_id, '_order_number_free', $this->free_order_number_start(), $this->free_order_number_prefix() ) ) {
-						update_post_meta( $post_id, '_order_number', -1 );
+					$themeta_free = get_post_meta($post->ID, '_order_number_free', TRUE);
+					if($themeta_free != '') {
+						if ( $this->generate_sequential_order_number( $post_id, '_order_number_free', $this->free_order_number_start(), $this->free_order_number_prefix() ) ) {
+							update_post_meta( $post_id, '_order_number', -1 );
+						}
 					}
 				} else {
-					$this->generate_sequential_order_number( $post_id, '_order_number', get_option( 'woocommerce_order_number_start' ), $this->order_number_prefix(), $this->order_number_suffix(), $this->order_number_size() );
+					$themeta = get_post_meta($post->ID, '_order_number', TRUE);
+					if($themeta != '') {
+						$this->generate_sequential_order_number( $post_id, '_order_number', get_option( 'woocommerce_order_number_start' ), $this->order_number_prefix(), $this->order_number_suffix(), $this->order_number_size() );
+					}
 				}
 			}
 		}
@@ -84,12 +90,12 @@ class WC_Sequential_Order_Numbers_Admin {
 			$order_number_start  = get_post_meta( $post_id, '_order_number_meta' );
 		}
 		for ( $i = 0; $i < 3 && ! $success; $i++ ) {
-			$query = $wpdb->prepare( "
+			$query = $wpdb->prepare("
 				INSERT INTO {$wpdb->postmeta} (post_id,meta_key,meta_value)
 				SELECT %d,'{$order_number_meta_name}',IF(MAX(CAST(meta_value AS SIGNED)) IS NULL OR MAX(CAST(meta_value AS SIGNED)) < %d, %d, MAX(CAST(meta_value AS SIGNED))+1)
 					FROM {$wpdb->postmeta}
 					WHERE meta_key='{$order_number_meta_name}'",
-				$post_id, $order_number_start, $order_number_start );
+				 $post_id, $order_number_start, $order_number_start);
 			$success = $wpdb->query( $query );
 
 			if ( $success ) {
@@ -253,3 +259,4 @@ class WC_Sequential_Order_Numbers_Admin {
 		} // End If Statement
 	}// End load_class()
 }
+?>

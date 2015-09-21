@@ -277,5 +277,3 @@ private $options;
   }
 
 }
-  
-  
